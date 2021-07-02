@@ -8,6 +8,7 @@ const http = require('http').Server(app)
 const io = require('socket.io')(http, {
     cors: {
         origin: ["http://localhost:3000","https://optimistic-brattain-ecdb7c.netlify.app"],
+        methods:["GET","POST"],
         credentials: true
     }
 })
