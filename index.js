@@ -7,7 +7,7 @@ const dotenv = require('dotenv')
 const http = require('http').Server(app)
 const io = require('socket.io')(http, {
     cors: {
-        origin: "https://optimistic-brattain-ecdb7c.netlify.app/",
+        origin: ["http://localhost:3000","https://optimistic-brattain-ecdb7c.netlify.app"],
         credentials: true
     }
 })
