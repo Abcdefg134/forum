@@ -84,5 +84,5 @@ app.use('/comment', CommentRounter)
 app.use('/main', SpaceRouter )
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-http.listen(PORT, () => { console.log("Server started on http://localhost:" + PORT) })
+http.listen(process.env.PORT||8797)
 module.exports = app;
