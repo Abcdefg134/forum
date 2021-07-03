@@ -54,7 +54,7 @@ const User = require('../model/User');
 
 
 //add-post-new
-router.post('/add-post', async(req,res) => {
+router.post('/add-post', async (req, res) => {
     const authId = req.authenticateUser._id
     let post = new Post({
         _id: new mongoose.Types.ObjectId,
@@ -66,7 +66,7 @@ router.post('/add-post', async(req,res) => {
         space: req.body.space,
         author: req.body.author
     })
-    
+
     if (authId) {
         await post.save((err) => {
             if (err) throw err;
@@ -85,9 +85,7 @@ router.post('/add-post', async(req,res) => {
                     return res.status(422).json({ error: err })
                 }
             })
-            //})} else {
-            // res.status(400).send({messError:'You must login '})
-            //}
+
         }
         )
 
